@@ -90,6 +90,7 @@
   }
   .boton:hover { transform: scale(1.05); }
   .whatsapp { background: #25d366; }
+  .whatsapp-no { background: #8a7f76; }
   .ruta { background: #8b2e3c; font-size: .9rem; padding: 9px 18px; }
 
   .btn-musica {
@@ -150,6 +151,8 @@
     <div class="lugar">
       <p>¿Nos acompañarás? Confirma tu asistencia:</p>
       <a class="boton whatsapp" id="btnWhats" target="_blank" href="#">💬 Confirmar por WhatsApp</a>
+      <br>
+      <a class="boton whatsapp-no" id="btnWhatsNo" target="_blank" href="#">No podré asistir</a>
     </div>
   </div>
 
@@ -162,6 +165,7 @@
   const FECHA_BODA = new Date('2027-01-02T13:00:00'); // año-mes-díaThora:min:seg
   const WHATSAPP   = '5214251263004';                 // código de país + número, sin + ni espacios
   const MENSAJE    = 'Hola, confirmo mi asistencia a la boda. Mi nombre es: ';
+  const MENSAJE_NO = 'Hola, lamentablemente no podré asistir a la boda, pero les deseo lo mejor. Mi nombre es: ';
   /* ============================ */
 
   const sobre = document.getElementById('sobre');
@@ -202,6 +206,9 @@
 
   document.getElementById('btnWhats').href =
     `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAJE)}`;
+
+  document.getElementById('btnWhatsNo').href =
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAJE_NO)}`;
 </script>
 </body>
 </html>
